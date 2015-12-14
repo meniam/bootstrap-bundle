@@ -11,7 +11,8 @@
             "homepage": "http://florian.ec"
         }
     ],
-    "require":      {
+    "require":
+    {
         "php":                      ">=5.6",
         "symfony/framework-bundle": "~2.8",
         "symfony/twig-bundle":      "~2.8",
@@ -22,7 +23,7 @@
         "mockery/mockery":              "0.9.*"
     },
     "autoload": {
-        "psr-0": { "MeniamBootstrap\\Bundle\\BootstrapBundle": "" }
+        "psr-0": { "Braincrafted\\Bundle\\BootstrapBundle": "" }
     },
-    "target-dir": "MeniamBootstrap/Bundle/BootstrapBundle"
+    "target-dir": "Braincrafted/Bundle/BootstrapBundle"
 }
