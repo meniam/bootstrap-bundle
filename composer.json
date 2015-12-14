@@ -1,7 +1,7 @@
 {
     "name":         "meniam/bootstrap-bundle",
     "description":  "BootstrapBundle integrates Bootstrap into Symfony3 by providing templates, Twig extensions, services and commands.",
-    "keywords":     ["bootstrap"],
+    "keywords":     ["bootstrap", "symfony3", "symfony", "php", "bundle"],
     "type":         "symfony-bundle",
     "license":      "MIT",
     "authors":     [
