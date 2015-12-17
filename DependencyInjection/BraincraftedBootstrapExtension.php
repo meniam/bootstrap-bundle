@@ -12,6 +12,8 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
 use Symfony\Component\DependencyInjection\Loader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
+use Symfony\Component\Config\Definition\Processor;
+use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 /**
  * BraincraftedBootstrapExtension
@@ -33,12 +35,20 @@ class BraincraftedBootstrapExtension extends Extension implements PrependExtensi
      */
     public function load(array $configs, ContainerBuilder $container)
     {
+        $configuration = new Configuration();
+
+        $config = $this->processConfiguration($configuration, $configs);
+
         $loader = new Loader\XmlFileLoader(
             $container,
             new FileLocator(__DIR__.'/../Resources/config')
         );
         $loader->load('services/form.xml');
         $loader->load('services/twig.xml');
+
+        $container->setParameter('braincrafted_bootstrap.icon_prefix', $config['icon_prefix']);
+        $container->setParameter('braincrafted_bootstrap.icon_tag', $config['icon_tag']);
+
     }
 
     /**
